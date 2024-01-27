@@ -4,9 +4,9 @@ const db = new PrismaClient();
 function createUser() {
   return db.user.create({
     data: {
-      email: 'george@blacksearecruitment.co.uk',
-      firstName: 'George',
-      lastName: 'Andreev',
+      email: process.env.SEED_EMAIL as string,
+      firstName: process.env.SEED_FIRST_NAME as string,
+      lastName: process.env.SEED_LAST_NAME as string,
     },
   });
 }
